@@ -25,7 +25,7 @@ const Header = () => {
           <button>search</button>
         </div>
         <div>
-          <Image src={logo} alt="logo" className="w-44 h-14"></Image>
+          <Image src={logo} alt="logo" className="w-40 h-12"></Image>
         </div>
         <div className=" flex">
             <button>shop</button>
