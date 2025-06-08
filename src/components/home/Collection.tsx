@@ -3,7 +3,7 @@ import React from 'react';
 const Collection = () => {
     return (
         <div>
-            <h2>Collection section</h2>
+            <h2 className='text-primary'>Collection section</h2>
         </div>
     );
 };
