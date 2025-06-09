@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  Facebook,
-  Instagram,
-  Twitter,
-  MessageCircleMore,
-} from "lucide-react";
+  FaFacebook,
+  FaFacebookMessenger,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 import logo from "../../assets/logo2-footer.webp";
 import Image from "next/image";
 const Footer = () => {
@@ -13,9 +13,10 @@ const Footer = () => {
       <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm sm:text-base">
         {/* Logo + Slogan */}
         <div>
-           <Image src={logo} alt="logo" className="w-60 h-20 mb-6"></Image>
+          <Image src={logo} alt="logo" className="w-60 h-20 mb-6"></Image>
           <p className="text-white text-sm leading-loose">
-            আমাদের কালেকশন আপনাকে দেবে ফ্যাশনের আধুনিকতা এবং প্রতিহারের একটি নির্ভরযোগ্য সম্মিশ্রণ।
+            আমাদের কালেকশন আপনাকে দেবে ফ্যাশনের আধুনিকতা এবং প্রতিহারের একটি
+            নির্ভরযোগ্য সম্মিশ্রণ।
           </p>
         </div>
 
@@ -23,9 +24,15 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-3 text-lg">Explore More</h3>
           <ul className="space-y-2 text-white">
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="#">New Arrivals</a>
+            </li>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
           </ul>
         </div>
 
@@ -33,35 +40,45 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold mb-3">Client Experience</h3>
           <ul className="space-y-2 text-gray-300">
-            <li><a href="#">Track Your Order</a></li>
-            <li><a href="#">Returns & Exchanges</a></li>
-            <li><a href="#">Customer Reviews</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li>
+              <a href="#">Track Your Order</a>
+            </li>
+            <li>
+              <a href="#">Returns & Exchanges</a>
+            </li>
+            <li>
+              <a href="#">Customer Reviews</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#">FAQ</a>
+            </li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h3 className="font-semibold mb-3">GET IN TOUCH</h3>
-          <p className="text-gray-300 mb-1">
-            মোবাইল নম্বর: <span className="text-white">(+88) 01855-375963</span>
+          <h3 className=" text-xl font-semibold mb-5">GET IN TOUCH</h3>
+          <p className="text-gray-400 font-semibold text-sm mb-1">
+            মোবাইল নম্বর: <span className=" font-normal">(+88) 01855-375963</span>
           </p>
-          <p className="text-gray-300 mb-3">
-            ইমেইল: <span className="text-white">hello@glorebd.com</span>
+          <p className="text-gray-400 text-sm mb-5 font-semibold">
+            ইমেইল: <span className="font-normal">hello@glorebd.com</span>
           </p>
-          <div className="flex items-center gap-4 mt-2">
+          <div className="flex items-center gap-8 mt-2">
             <a href="#" className="hover:text-pink-500">
-              <Facebook size={20} />
+              <FaFacebook size={"1.9rem"} />
             </a>
             <a href="#" className="hover:text-pink-500">
-              <MessageCircleMore size={20} />
+              <FaFacebookMessenger size={"1.9rem"} />
             </a>
             <a href="#" className="hover:text-pink-500">
-              <Twitter size={20} />
+              <FaTwitter size={"1.9rem"} />
             </a>
             <a href="#" className="hover:text-pink-500">
-              <Instagram size={20} />
+              <FaInstagram size={"1.9rem"} />
             </a>
           </div>
         </div>
@@ -69,7 +86,8 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="text-center text-sm text-gray-400 mt-10">
-        © 2025 Powered by <span className="text-orange-400 font-bold">CalQuick</span>
+        © 2025 Powered by{" "}
+        <span className="text-orange-400 font-bold">CalQuick</span>
       </div>
     </footer>
   );
