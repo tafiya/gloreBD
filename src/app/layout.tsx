@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
-
+import { Outfit } from 'next/font/google';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -14,6 +14,12 @@ import Footer from "@/components/shared/Footer";
 //   variable: "--font-geist-mono",
 //   subsets: ["latin"],
 // });
+const outfit = Outfit({
+  subsets: ['latin'],
+ // Optional: customize weights
+  variable: '--font-outfit',           // Optional: use CSS variable
+  // display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Glore BD",
@@ -26,9 +32,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={outfit.className}>
       <body
-        className={``}
+        
       >
         <Header></Header>
         {children}
