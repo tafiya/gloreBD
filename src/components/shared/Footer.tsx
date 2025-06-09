@@ -21,8 +21,8 @@ const Footer = () => {
 
         {/* Explore More */}
         <div>
-          <h3 className="font-semibold mb-3">Explore More</h3>
-          <ul className="space-y-2 text-gray-300">
+          <h3 className="font-semibold mb-3 text-lg">Explore More</h3>
+          <ul className="space-y-2 text-white">
             <li><a href="#">New Arrivals</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact</a></li>
