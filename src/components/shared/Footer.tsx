@@ -10,7 +10,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10">
-      <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm sm:text-base">
+      <div className=" mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-sm sm:text-base">
         {/* Logo + Slogan */}
         <div>
           <Image src={logo} alt="logo" className="w-60 h-20 mb-6"></Image>

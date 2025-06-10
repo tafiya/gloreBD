@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { Outfit } from 'next/font/google';
+import BottomNavbar from "@/components/shared/BottomNavbar";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -36,9 +37,13 @@ export default function RootLayout({
       <body
         
       >
-        <Header></Header>
+       
+     <Header></Header>
+      
+   
         {children}
         <Footer></Footer>
+             <BottomNavbar />
       </body>
     </html>
   );
