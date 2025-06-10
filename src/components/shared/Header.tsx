@@ -42,7 +42,7 @@ const Header = () => {
       {/* Header */}
       <div
         className={clsx(
-          "fixed z-10 w-full transition-all text-black",
+          "fixed z-10 w-full transition-all sm:block hidden text-black",
           scrolling && "bg-white shadow-lg shadow-gray text-black"
         )}
       >
