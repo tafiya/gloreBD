@@ -24,10 +24,13 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, price, oldPrice }) => {
   </div>
 
   {/* Title */}
-  <h3 className="px-4 pt-3 text-sm font-medium text-gray-800">{title}</h3>
+  <h3 className="px-4 pt-3 text-base font-semibold text-gray-800">{title}</h3>
 
   {/* Price & Button at the bottom */}
   <div className="mt-auto p-4 flex items-center justify-between">
+     <button className="px-4 py-2 bg-primary text-white font-semibold text-sm rounded hover:bg-primary transition">
+      অর্ডার করুন
+    </button>
     <div className="flex items-center space-x-2">
       <span className="text-primary font-semibold">৳{price}</span>
       {oldPrice && (
@@ -36,9 +39,7 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, price, oldPrice }) => {
         </span>
       )}
     </div>
-    <button className="px-4 py-1 bg-primary text-white text-sm rounded hover:bg-primary transition">
-      অর্ডার করুন
-    </button>
+   
   </div>
 </div>
 
