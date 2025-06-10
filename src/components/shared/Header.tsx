@@ -7,16 +7,19 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { Search } from "lucide-react";
 import { RiShoppingBag2Fill } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import Sidebar from "../others/Sidebar";
+import CartSidebar from "../others/CartSidebar";
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false);
-  const handleCloseSidebar = () => {
-    setIsSidebarOpen(false);
-    setShowSubMenu(false);
-  };
+  // const [showSubMenu, setShowSubMenu] = useState(false);
+  
+  // const handleCloseSidebar = () => {
+  //   setIsSidebarOpen(false);
+  //   setShowSubMenu(false);
+  // };
   useEffect(() => {
     const handleScroll = () => {
       setScrolling(window.scrollY > 10);
@@ -88,103 +91,15 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Sidebar Overlay */}
-      {isSidebarOpen && (
-        <div
-          className="fixed inset-0 z-30"
-          onClick={() => setIsSidebarOpen(false)}
-        ></div>
-      )}
-
-      {/* Sidebar Drawer */}
-      <div
-        className={clsx(
-          "fixed top-0 left-0 w-80 h-full bg-white shadow-lg z-40 p-6 transition-transform duration-300 ease-in-out",
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-lg font-bold">Categories</h2>
-          <button
-            onClick={handleCloseSidebar}
-            // onClick={() => setIsSidebarOpen(false)}
-            className="text-sm font-extrabold"
-          >
-            X
-           {/* <RiCloseFill className="font-bold" size={}/> */}
-          </button>
-        </div>
-        <ul className="space-y-4">
-          <li>
-            <button
-              className="w-full text-left border-b border-b-primary pb-2 text-base font-medium cursor-pointer hover:text-primary transition flex justify-between items-center"
-              onClick={() => setShowSubMenu(!showSubMenu)}
-            >
-              Women Clothing
-            </button>
-            {showSubMenu && (
-              <ul className="mt-2 ml-4 space-y-2 text-sm text-gray-700">
-                <li className="cursor-pointer hover:text-primary transition">
-                  Jamdhani Sharee
-                </li>
-                <li className="cursor-pointer hover:text-primary transition">
-                  Three Pieces
-                </li>
-                <li className="cursor-pointer hover:text-primary transition">
-                  Unstitched Party Dress
-                </li>
-              </ul>
-            )}
-          </li>
-        </ul>
-      </div>
+   <Sidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       {/* cartBar Overlay */}
-      {isCartOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-45 z-30"
-          onClick={() => setIsCartOpen(false)}
-        ></div>
-      )}
-         <div
-        className={clsx(
-          "fixed top-0 right-0 w-[350px] h-full bg-white shadow-lg z-40 transition-transform duration-800 ease-in-out",
-          isCartOpen ? "translate-x-0" : "translate-x-full"
-        )}
-      >
-        <div className="pt-5 px-5">
- <div className="flex justify-between bg-[#e5e7eb] px-3 py-2.5 rounded-md items-center mb-6">
-          <h2 className="text-base">Shopping Cart</h2>
-          <button
-            onClick={() => setIsCartOpen(false)}
-            className="text-xl font-semibold text-gray-500"
-          >
-            ✕
-          </button>
-        </div>
-        </div>
-       
-        {/* cart item div */}
-        <div className="flex flex-col h-full ">
-          <div className="flex-1 overflow-y-auto  p-6 ">
-            {/* Display cart items or empty state here */}
-         
-          </div>
-          <div className="border-t t border-t-gray-300 pb-28 px-5">
-            <div className="flex justify-between my-3 text-lg font-semibold">
-              <span>Subtotal:</span>
-              <span>৳ 0</span>
-            </div>
-            <div className="flex gap-4">
-              <button className="w-full bg-gray-200 py-2 rounded">
-                Clear All
-              </button>
-              <button className="w-full bg-primary text-white py-2 rounded">
-                Checkout →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+   <CartSidebar
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+      />
     </>
   );
 };
