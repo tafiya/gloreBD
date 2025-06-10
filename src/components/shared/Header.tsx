@@ -12,7 +12,11 @@ const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
+  const [showSubMenu, setShowSubMenu] = useState(false);
+const handleCloseSidebar = () => {
+  setIsSidebarOpen(false);
+  setShowSubMenu(false);
+};
   useEffect(() => {
     const handleScroll = () => {
       setScrolling(window.scrollY > 10);
@@ -90,17 +94,36 @@ const Header = () => {
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-lg font-bold">Categories</h2>
           <button
-            onClick={() => setIsSidebarOpen(false)}
+          onClick={handleCloseSidebar}
+            // onClick={() => setIsSidebarOpen(false)}
             className="text-2xl font-bold"
           >
             ✕
           </button>
         </div>
         <ul className="space-y-4">
-          <li className="border-b pb-2 text-base cursor-pointer hover:text-primary transition">
-            Women Clothing
+          <li>
+            <button
+              className="w-full text-left border-b pb-2 text-base font-medium cursor-pointer hover:text-primary transition flex justify-between items-center"
+              onClick={() => setShowSubMenu(!showSubMenu)}
+            >
+              Women Clothing
+           
+            </button>
+            {showSubMenu && (
+              <ul className="mt-2 ml-4 space-y-2 text-sm text-gray-700">
+                <li className="cursor-pointer hover:text-primary transition">
+                  Jamdhani Sharee
+                </li>
+                <li className="cursor-pointer hover:text-primary transition">
+                  Three Pieces
+                </li>
+                <li className="cursor-pointer hover:text-primary transition">
+                  Unstitched Party Dress
+                </li>
+              </ul>
+            )}
           </li>
-          {/* Add more categories here if needed */}
         </ul>
       </div>
       {/* cartBar Overlay */}
