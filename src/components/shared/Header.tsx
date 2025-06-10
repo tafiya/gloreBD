@@ -108,15 +108,16 @@ const Header = () => {
           <button
             onClick={handleCloseSidebar}
             // onClick={() => setIsSidebarOpen(false)}
-            className="text-2xl font-bold"
+            className="text-sm font-extrabold"
           >
-            ✕
+            X
+           {/* <RiCloseFill className="font-bold" size={}/> */}
           </button>
         </div>
         <ul className="space-y-4">
           <li>
             <button
-              className="w-full text-left border-b pb-2 text-base font-medium cursor-pointer hover:text-primary transition flex justify-between items-center"
+              className="w-full text-left border-b border-b-primary pb-2 text-base font-medium cursor-pointer hover:text-primary transition flex justify-between items-center"
               onClick={() => setShowSubMenu(!showSubMenu)}
             >
               Women Clothing
