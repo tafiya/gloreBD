@@ -33,6 +33,7 @@ const Collection = async () => {
         {products.map((product) => (
           <Card
             key={product._id}
+            id={product._id}
             title={product.name}
             imageUrl={product.images[0]?.secure_url || ""}
             price={Number(product.price)}

@@ -1,13 +1,15 @@
+import Link from "next/link";
 import React from "react";
 
 interface CardProps {
+  id:string;
   title: string;
   imageUrl: string;
   price: number;
   oldPrice?: number;
 }
 
-const Card: React.FC<CardProps> = ({ title, imageUrl, price, oldPrice }) => {
+const Card: React.FC<CardProps> = ({ id,title, imageUrl, price, oldPrice }) => {
   // const discount = oldPrice
   //   ? `${Math.round(((oldPrice - price) / oldPrice) * 100)}%`
   //   : undefined;
@@ -16,11 +18,14 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, price, oldPrice }) => {
  <div className="bg-white shadow-md flex flex-col rounded-xl overflow-hidden">
   {/* Image */}
   <div className=" overflow-hidden w-full rounded-t-sm">
-    <img
+    <Link href={`/single-product/${id}`}>
+       <img
       src={imageUrl}
       alt={title}
       className="w-full object-cover transition-transform duration-400 hover:scale-125 hover:-translate-y-1"
     />
+    </Link>
+ 
   </div>
 
   {/* Title */}
