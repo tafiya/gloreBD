@@ -9,17 +9,12 @@ import { RiShoppingBag2Fill } from "react-icons/ri";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import Sidebar from "../others/Sidebar";
 import CartSidebar from "../others/CartSidebar";
+import Link from "next/link";
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  // const [showSubMenu, setShowSubMenu] = useState(false);
-  
-  // const handleCloseSidebar = () => {
-  //   setIsSidebarOpen(false);
-  //   setShowSubMenu(false);
-  // };
   useEffect(() => {
     const handleScroll = () => {
       setScrolling(window.scrollY > 10);
@@ -53,13 +48,13 @@ const Header = () => {
           {/* Left: Menu & Search */}
           <div className="flex items-center justify-center gap-8">
             <button
-              className="flex items-center justify-center gap-2"
+              className="flex items-center cursor-pointer justify-center gap-2"
               onClick={() => setIsSidebarOpen(true)}
             >
               <HiMenuAlt1 size={"1.7rem"} />
               <h2 className="font-medium text-base">Menu</h2>
             </button>
-            <button className="flex items-center justify-center gap-2">
+            <button className="flex items-center cursor-pointer justify-center gap-2">
               <Search />
               <h2 className="font-medium text-base">Search</h2>
             </button>
@@ -67,18 +62,19 @@ const Header = () => {
 
           {/* Center: Logo */}
           <div>
-            <Image src={logo} alt="logo" className="w-40 h-12" />
+              <Link href="/"><Image src={logo} alt="logo" className="w-40 h-12 cursor-pointer" /></Link>
+   
           </div>
 
           {/* Right: Shop & Cart */}
           <div className="flex items-center justify-center gap-6">
-            <button className="flex items-center justify-center gap-2">
+            <button className="flex cursor-pointer items-center justify-center gap-2">
               <RiShoppingBag2Fill size={"1.7rem"} />
               <h2 className="font-medium text-base">Shop</h2>
             </button>
             <button
               onClick={() => setIsCartOpen(true)}
-              className="flex items-center justify-center gap-2"
+              className="flex items-center cursor-pointer justify-center gap-2"
             >
               <div className="relative scale-75">
                 <HiOutlineShoppingBag size={"2.5rem"} />

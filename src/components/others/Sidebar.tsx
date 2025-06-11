@@ -22,7 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
 <div
   className={clsx(
-    "fixed left-0 bottom-14 w-72 sm:w-80 h-[calc(100vh-56px)] bg-white z-30 p-6 transition-transform duration-300 overflow-y-auto",
+    "fixed left-0 top-0  sm:bottom-14 w-60 sm:w-80 h-[calc(100vh-56px)] sm:h-full bg-white z-30 p-6 transition-transform duration-300 overflow-y-auto",
     isOpen ? "translate-x-0" : "-translate-x-full"
   )}
 >

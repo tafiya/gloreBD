@@ -18,7 +18,7 @@ const CartSidebar: React.FC<CartSidebarProps> = ({ isOpen, onClose }) => {
 
       <div
         className={clsx(
-          "fixed top-0 right-0 w-[350px] h-full bg-white z-40 transition-transform duration-500",
+          "fixed top-0 right-0 w-[320px] h-full bg-white z-40 transition-transform duration-500",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
