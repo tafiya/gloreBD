@@ -17,27 +17,31 @@ type Product = {
   price: string;
 };
 export default function RelatedProducts({ currentId }: Props) {
-      const [products, setProduct] = useState<Product | null>(null);
-      const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const res = await fetch("https://glore-bd-backend-node-mongo.vercel.app/api/product");
         const data = await res.json();
 
-        const foundProduct = data.data.filter((item: Product) => item._id !== currentId );
-        setProduct(foundProduct);
-        setLoading(false);
+        const foundProduct = data.data.filter((item: Product) => item._id !== currentId);
+        setProducts(foundProduct);
       } catch (err) {
         console.error(err);
+      } finally {
         setLoading(false);
       }
     };
 
     fetchProduct();
   }, [currentId]);
-//   const filtered = all.filter((p: any) => p._id !== currentId).slice(0, 3);
-  console.log("related products",products)
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
 
 
   return (
